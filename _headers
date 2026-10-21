@@ -1,0 +1,4 @@
+# Actualizaciones del contenido (cifradas): la app las baja desde https://localhost (Capacitor).
+/actualizaciones/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: no-cache

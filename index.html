@@ -362,6 +362,8 @@ footer.pie .copy{margin-top:12px;font-size:13px}
     <details class="vidrio"><summary data-t="q4"></summary><p data-t="a4"></p></details>
     <details class="vidrio"><summary data-t="q5"></summary><p data-t="a5"></p></details>
     <details class="vidrio"><summary data-t="q6"></summary><p data-t="a6"></p></details>
+    <details class="vidrio"><summary data-t="q7"></summary><p data-t="a7"></p></details>
+    <details class="vidrio"><summary data-t="q8"></summary><p data-t="a8"></p></details>
   </div>
 </section>
 
@@ -374,11 +376,13 @@ footer.pie .copy{margin-top:12px;font-size:13px}
 <script src="assets/textos.js"></script>
 <script src="assets/datos.js"></script>
 <script>
-// ---- Configuración de venta: completar cuando estén los links de pago (Gumroad, Lemon Squeezy, Stripe…) ----
+// ---- Configuración de venta (ver docs/venta.md en el repo de la app) ----
+// Links de pago de Lemon Squeezy ("Share" de cada producto: https://<tienda>.lemonsqueezy.com/buy/<id>).
+// Con un link de Lemon Squeezy el pago se abre encima de la página; cualquier otro link se abre normal.
 const CONFIG = {
   comprarApp: '',   // link de pago de la app (vacío = "Disponible muy pronto")
   comprarPdf: '',   // link de pago del PDF
-  precioApp: '',    // por ejemplo '149 kr'; vacío = "Muy pronto"
+  precioApp: '',    // por ejemplo '199 kr'; vacío = "Muy pronto"
   precioPdf: '',
 };
 
@@ -475,6 +479,34 @@ document.querySelectorAll('select[data-idioma]').forEach((s) => {
   s.addEventListener('change', () => { idioma = s.value; guardar(idioma); aplicar(); });
 });
 aplicar();
+
+// Pago: el checkout de Lemon Squeezy se abre encima de la página (lemon.js). Si el script no carga, va al link.
+const ES_LEMON = /^https:\/\/[\w-]+\.lemonsqueezy\.com\/(checkout\/)?buy\//;
+let lemon = null;
+function cargarLemon() {
+  lemon = lemon || new Promise((ok, mal) => {
+    const s = document.createElement('script');
+    s.src = 'https://app.lemonsqueezy.com/js/lemon.js';
+    s.onload = () => { try { window.createLemonSqueezy(); ok(window.LemonSqueezy); } catch (e) { mal(e); } };
+    s.onerror = mal;
+    setTimeout(() => mal(new Error('lemon.js no cargó')), 8000);
+    document.head.appendChild(s);
+  }).catch((e) => { lemon = null; throw e; });
+  return lemon;
+}
+document.querySelectorAll('[data-comprar]').forEach((b) => {
+  b.addEventListener('pointerenter', () => { if (ES_LEMON.test(b.href)) cargarLemon().catch(() => {}); });
+  b.addEventListener('click', async (e) => {
+    const url = b.getAttribute('href');
+    if (!url || !ES_LEMON.test(url)) return;
+    e.preventDefault();
+    try {
+      (await cargarLemon()).Url.Open(url + (url.includes('?') ? '&' : '?') + 'embed=1');
+    } catch {
+      location.href = url;
+    }
+  });
+});
 
 // Video: sin movimiento si la persona lo pidió.
 const video = document.getElementById('video');

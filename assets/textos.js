@@ -39,6 +39,8 @@ window.TEXTOS = {
     q4: '¿En qué idiomas está?', a4: 'Español, inglés, alemán, francés, italiano, polaco y serbio. Los términos noruegos quedan en noruego, como se usan en la obra.',
     q5: '¿De dónde sale la información?', a5: 'De las leyes y reglamentos noruegos (Lovdata), de las autoridades (DSB, Sjøfartsdirektoratet, Havtil) y de las fuentes técnicas citadas en cada tarjeta. Las cifras críticas tienen dos fuentes; si no, la tarjeta lo avisa.',
     q6: '¿Quién la hizo?', a6: 'Un electricista que vino a trabajar a Noruega y armó la guía que le hubiera gustado tener el primer día.',
+    q7: '¿Cómo recibo las actualizaciones?', a7: 'Con la app llega por mail una clave de licencia. La pegás una vez en la app (Acerca de → Licencia) y desde ahí el contenido nuevo se baja solo, sin volver a pagar. Sirve para hasta 3 teléfonos tuyos. Las versiones nuevas del APK y del PDF se descargan desde el mismo mail de compra.',
+    q8: '¿Cómo se paga?', a8: 'Pago único, sin suscripción: con tarjeta, Apple Pay, Google Pay o PayPal, en una página de pago segura que se abre encima de esta. El recibo y la descarga llegan por mail.',
     pie: 'elnorge no está vinculada a NEK, DSB ni a ningún organismo. No reproduce normas: las explica con palabras propias y cita el punto.',
   },
   en: {
@@ -80,6 +82,8 @@ window.TEXTOS = {
     q4: 'Which languages?', a4: 'Spanish, English, German, French, Italian, Polish and Serbian. Norwegian terms stay in Norwegian, the way they are used on site.',
     q5: 'Where does the information come from?', a5: 'From Norwegian laws and regulations (Lovdata), the authorities (DSB, Sjøfartsdirektoratet, Havtil) and the technical sources cited on each card. Critical figures have two sources; if not, the card says so.',
     q6: 'Who made it?', a6: 'An electrician who came to work in Norway and put together the guide he would have liked on his first day.',
+    q7: 'How do I get the updates?', a7: 'The app comes with a licence key sent by email. Paste it once in the app (About → Licence) and from then on new content downloads by itself, with no extra payment. It works on up to 3 of your phones. New versions of the APK and the PDF are downloaded from the same purchase email.',
+    q8: 'How do I pay?', a8: 'A one-time payment, no subscription: by card, Apple Pay, Google Pay or PayPal, on a secure checkout that opens on top of this page. The receipt and the download arrive by email.',
     pie: 'elnorge is not affiliated with NEK, DSB or any authority. It does not reproduce standards: it explains them in its own words and cites the clause.',
   },
   de: {
@@ -121,6 +125,8 @@ window.TEXTOS = {
     q4: 'In welchen Sprachen?', a4: 'Spanisch, Englisch, Deutsch, Französisch, Italienisch, Polnisch und Serbisch. Die norwegischen Begriffe bleiben auf Norwegisch, so wie sie auf der Baustelle verwendet werden.',
     q5: 'Woher stammen die Informationen?', a5: 'Aus norwegischen Gesetzen und Vorschriften (Lovdata), von den Behörden (DSB, Sjøfartsdirektoratet, Havtil) und aus den technischen Quellen, die auf jeder Karte stehen. Kritische Werte haben zwei Quellen; sonst weist die Karte darauf hin.',
     q6: 'Wer hat sie gemacht?', a6: 'Ein Elektriker, der zum Arbeiten nach Norwegen kam und den Ratgeber geschrieben hat, den er sich am ersten Tag gewünscht hätte.',
+    q7: 'Wie bekomme ich die Updates?', a7: 'Mit der App bekommst du per E-Mail einen Lizenzschlüssel. Du fügst ihn einmal in der App ein (Info → Lizenz), danach werden neue Inhalte von selbst geladen, ohne erneut zu zahlen. Er gilt für bis zu 3 deiner Handys. Neue Versionen der APK und des PDFs lädst du über dieselbe Kauf-E-Mail herunter.',
+    q8: 'Wie bezahle ich?', a8: 'Einmalzahlung, kein Abo: per Karte, Apple Pay, Google Pay oder PayPal, auf einer sicheren Bezahlseite, die sich über dieser Seite öffnet. Beleg und Download kommen per E-Mail.',
     pie: 'elnorge ist nicht mit NEK, DSB oder einer Behörde verbunden. Normen werden nicht wiedergegeben, sondern in eigenen Worten erklärt, mit Angabe des Abschnitts.',
   },
   fr: {
@@ -162,6 +168,8 @@ window.TEXTOS = {
     q4: 'Dans quelles langues ?', a4: 'Espagnol, anglais, allemand, français, italien, polonais et serbe. Les termes norvégiens restent en norvégien, comme sur le chantier.',
     q5: 'D’où viennent les informations ?', a5: 'Des lois et règlements norvégiens (Lovdata), des autorités (DSB, Sjøfartsdirektoratet, Havtil) et des sources techniques citées sur chaque fiche. Les valeurs critiques ont deux sources ; sinon, la fiche le signale.',
     q6: 'Qui l’a fait ?', a6: 'Un électricien venu travailler en Norvège, qui a écrit le guide qu’il aurait aimé avoir le premier jour.',
+    q7: 'Comment recevoir les mises à jour ?', a7: 'Avec l’application, vous recevez par e-mail une clé de licence. Collez-la une fois dans l’application (À propos → Licence) et le nouveau contenu se télécharge ensuite tout seul, sans payer à nouveau. Elle vaut pour 3 de vos téléphones au maximum. Les nouvelles versions de l’APK et du PDF se téléchargent depuis le même e-mail d’achat.',
+    q8: 'Comment payer ?', a8: 'Paiement unique, sans abonnement : par carte, Apple Pay, Google Pay ou PayPal, sur une page de paiement sécurisée qui s’ouvre par-dessus celle-ci. Le reçu et le téléchargement arrivent par e-mail.',
     pie: 'elnorge n’est lié ni à NEK, ni à la DSB, ni à aucun organisme. Il ne reproduit pas les normes : il les explique avec ses propres mots et cite l’article.',
   },
   it: {
@@ -203,6 +211,8 @@ window.TEXTOS = {
     q4: 'In quali lingue?', a4: 'Spagnolo, inglese, tedesco, francese, italiano, polacco e serbo. I termini norvegesi restano in norvegese, come si usano in cantiere.',
     q5: 'Da dove vengono le informazioni?', a5: 'Dalle leggi e dai regolamenti norvegesi (Lovdata), dalle autorità (DSB, Sjøfartsdirektoratet, Havtil) e dalle fonti tecniche citate in ogni scheda. I valori critici hanno due fonti; altrimenti la scheda lo segnala.',
     q6: 'Chi l’ha fatta?', a6: 'Un elettricista venuto a lavorare in Norvegia, che ha scritto la guida che avrebbe voluto avere il primo giorno.',
+    q7: 'Come ricevo gli aggiornamenti?', a7: 'Con l’app ti arriva per e-mail una chiave di licenza. La incolli una volta nell’app (Informazioni → Licenza) e da lì i contenuti nuovi si scaricano da soli, senza pagare di nuovo. Vale per un massimo di 3 tuoi telefoni. Le nuove versioni dell’APK e del PDF si scaricano dalla stessa e-mail di acquisto.',
+    q8: 'Come si paga?', a8: 'Pagamento unico, senza abbonamento: con carta, Apple Pay, Google Pay o PayPal, su una pagina di pagamento sicura che si apre sopra questa. La ricevuta e il download arrivano per e-mail.',
     pie: 'elnorge non è collegata a NEK, DSB o ad alcun ente. Non riproduce le norme: le spiega con parole proprie e cita il punto.',
   },
   pl: {
@@ -244,6 +254,8 @@ window.TEXTOS = {
     q4: 'W jakich językach?', a4: 'Hiszpański, angielski, niemiecki, francuski, włoski, polski i serbski. Norweskie terminy zostają po norwesku, tak jak używa się ich na budowie.',
     q5: 'Skąd pochodzą informacje?', a5: 'Z norweskich ustaw i rozporządzeń (Lovdata), od organów (DSB, Sjøfartsdirektoratet, Havtil) i ze źródeł technicznych podanych na każdej karcie. Wartości krytyczne mają dwa źródła; jeśli nie, karta to zaznacza.',
     q6: 'Kto go stworzył?', a6: 'Elektryk, który przyjechał do pracy w Norwegii i napisał przewodnik, jaki chciałby mieć pierwszego dnia.',
+    q7: 'Jak dostaję aktualizacje?', a7: 'Z aplikacją dostajesz mailem klucz licencyjny. Wklejasz go raz w aplikacji (O aplikacji → Licencja) i od tej pory nowe treści pobierają się same, bez ponownej płatności. Działa na maksymalnie 3 Twoich telefonach. Nowe wersje APK i PDF pobierasz z tego samego maila z zakupem.',
+    q8: 'Jak się płaci?', a8: 'Jednorazowa płatność, bez subskrypcji: kartą, Apple Pay, Google Pay lub PayPal, na bezpiecznej stronie płatności, która otwiera się nad tą stroną. Potwierdzenie i plik przychodzą mailem.',
     pie: 'elnorge nie jest związany z NEK, DSB ani żadnym urzędem. Nie powiela norm: wyjaśnia je własnymi słowami i podaje punkt.',
   },
   sr: {
@@ -285,6 +297,8 @@ window.TEXTOS = {
     q4: 'Na kojim jezicima?', a4: 'Španski, engleski, nemački, francuski, italijanski, poljski i srpski. Norveški termini ostaju na norveškom, kako se koriste na gradilištu.',
     q5: 'Odakle potiču informacije?', a5: 'Iz norveških zakona i propisa (Lovdata), od nadležnih organa (DSB, Sjøfartsdirektoratet, Havtil) i iz tehničkih izvora navedenih na svakoj kartici. Kritične vrednosti imaju dva izvora; ako nemaju, kartica to naglašava.',
     q6: 'Ko ga je napravio?', a6: 'Električar koji je došao da radi u Norveškoj i napisao vodič kakav bi voleo da je imao prvog dana.',
+    q7: 'Kako dobijam ažuriranja?', a7: 'Uz aplikaciju mejlom stiže licencni ključ. Nalepiš ga jednom u aplikaciji (O vodiču → Licenca) i od tada se nov sadržaj sam preuzima, bez ponovnog plaćanja. Važi za najviše 3 tvoja telefona. Nove verzije APK-a i PDF-a preuzimaš iz istog mejla o kupovini.',
+    q8: 'Kako se plaća?', a8: 'Jednokratno plaćanje, bez pretplate: karticom, Apple Pay, Google Pay ili PayPal, na sigurnoj stranici za plaćanje koja se otvara preko ove. Potvrda i preuzimanje stižu mejlom.',
     pie: 'elnorge nije povezan sa NEK-om, DSB-om ni sa jednim organom. Ne prenosi standarde: objašnjava ih svojim rečima i navodi tačku.',
   },
 };
