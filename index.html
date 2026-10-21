@@ -89,6 +89,7 @@ body{background:var(--fondo);color:var(--texto);font-family:var(--font);font-syn
 .res+.res{border-top:1px solid rgba(255,255,255,.06)}
 .res .no{font-weight:600;font-size:16px}
 .res .tr{color:var(--acento);font-size:15px;margin-left:6px}
+.res .ab{font-size:11px;font-weight:600;color:#cfd0d3;border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:1px 5px;margin-left:6px;vertical-align:2px}
 .res .def{color:rgba(255,255,255,.72);font-size:14px;line-height:1.45;margin-top:4px}
 .res .en{color:var(--tenue);font-size:12px;margin-top:4px}
 .res-vacio{padding:12px 10px;color:rgba(255,255,255,.75);font-size:14px;line-height:1.45}
@@ -113,9 +114,9 @@ body{background:var(--fondo);color:var(--texto);font-family:var(--font);font-syn
 .modulos .t{font-size:15.5px;line-height:1.35}
 .modulos .tno{display:block;color:var(--tenue);font-size:13px;margin-top:2px}
 .capturas{display:flex;gap:22px;justify-content:center;margin-top:48px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 18px}
-.tel{flex:none;width:228px;scroll-snap-align:center;text-align:center}
+.tel{flex:none;width:248px;scroll-snap-align:center;text-align:center}
 .tel .marco{border-radius:30px;padding:8px;background:linear-gradient(180deg,#2a2b30,#15161a);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 24px 50px rgba(0,0,0,.45)}
-.tel img{width:100%;aspect-ratio:390/800;object-fit:cover;object-position:top;border-radius:23px;background:#11161d}
+.tel img{width:100%;height:auto;aspect-ratio:390/800;object-fit:cover;object-position:top;border-radius:23px;background:#11161d}
 .tel figcaption{color:var(--suave);font-size:14px;margin-top:14px}
 .precios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:48px;max-width:860px;margin-left:auto;margin-right:auto}
 .plan{padding:30px 28px;display:flex;flex-direction:column}
@@ -274,7 +275,7 @@ footer.pie .copy{margin-top:12px;font-size:13px}
             <div class="chips">
               <button type="button" class="chip" data-termino="jordfeilbryter"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M7 0L1 7h4l-1 5 6-7H6l1-5z"/></svg>jordfeilbryter</button>
               <button type="button" class="chip" data-termino="kursfortegnelse"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M2 1h8a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V2a1 1 0 011-1zm1 3v1h6V4H3zm0 3v1h4V7H3z"/></svg>kursfortegnelse</button>
-              <button type="button" class="chip" data-termino="trappebryter"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 1a3.5 3.5 0 012 6.4V9H4V7.4A3.5 3.5 0 016 1zM4.5 10h3v1h-3z"/></svg>trappebryter</button>
+              <button type="button" class="chip" data-termino="circuit breaker"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="6" cy="6" r="5"/><path d="M1 6h10M6 1c1.6 1.6 1.6 8.4 0 10M6 1c-1.6 1.6-1.6 8.4 0 10"/></svg>circuit breaker</button>
             </div>
             <div class="right">
               <span class="model"><select data-idioma aria-label="Idioma"></select></span>
@@ -412,7 +413,7 @@ function buscar(q) {
   for (const g of DATOS.glosario) {
     const [tr] = g.t[idioma];
     const campos = [norm(g.no), norm(tr), norm(g.en)];
-    let p = 0;
+    let p = g.ab && norm(g.ab) === n ? 100 : 0;
     campos.forEach((c, i) => {
       const peso = i === 0 ? 1 : 0.8;
       if (c === n) p = Math.max(p, 100 * peso);
@@ -435,8 +436,8 @@ function mostrar() {
   const r = buscar(q);
   const T = TEXTOS[idioma];
   $res.innerHTML = r.length
-    ? `<p class="res-titulo">${esc(T.muestra)}</p>` + r.map((g) => { const [tr, def] = g.t[idioma]; return `<div class="res"><span class="no">${esc(g.no)}</span><span class="tr">→ ${esc(tr)}</span><p class="def">${esc(def)}</p>${idioma === 'en' ? '' : `<p class="en">EN: ${esc(g.en)}</p>`}</div>`; }).join('')
-    : `<p class="res-vacio">${esc(T.vacio)}</p>`;
+    ? `<p class="res-titulo">${esc(T.muestra.replace('{n}', DATOS.glosario.length))}</p>` + r.map((g) => { const [tr, def] = g.t[idioma]; return `<div class="res"><span class="no">${esc(g.no)}</span>${g.ab ? `<span class="ab">${esc(g.ab)}</span>` : ''}<span class="tr">→ ${esc(tr)}</span><p class="def">${esc(def)}</p>${idioma === 'en' ? '' : `<p class="en">EN: ${esc(g.en)}</p>`}</div>`; }).join('')
+    : `<p class="res-vacio">${esc(T.vacio.replace('{n}', DATOS.glosario.length))}</p>`;
   $res.classList.add('ver');
 }
 $q.addEventListener('input', mostrar);
