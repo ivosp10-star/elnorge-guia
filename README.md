@@ -23,4 +23,6 @@ Mientras estén vacíos, los botones dicen "Disponible muy pronto". Con un link 
 
 ## Publicar
 
-Está en GitHub Pages (rama `main`, carpeta raíz). Cada `git push` publica en unos minutos. Para probar en local: cualquier servidor estático en esta carpeta.
+Está en **Cloudflare Pages**, proyecto `elnorge`: https://elnorge.pages.dev. Se publica con `publicar.bat` (copia `index.html` y `assets/` a `dist/` y los sube con wrangler). Las credenciales salen de `..elnorge.env` (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`).
+
+GitHub Pages ya no sirve la landing: la rama `gh-pages` solo redirige a elnorge.pages.dev, porque GitHub Pages no permite sitios de venta. Para probar en local: cualquier servidor estático en esta carpeta.
